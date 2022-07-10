@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fallback PNG favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- vectorial favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>GitHub Profilator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <h1>GitHub Profilator<span id="version">Alpha</span></h1>
+    <h2>Add GitHub profiles to README.md in a snap</h2>
+    <h3>Try with your or embed a new one!</h3>
+    <a
+      id="profilator-container"
+      href="https://github.com/Bellisario"
+      target="_blank"
+    >
+      <img
+        id="the-result"
+        src="/Bellisario"
+        alt="GitHub_Profilator"
+        onload="this.style.opacity = 1;"
+      />
+    </a>
+    <br />
+    <input id="the-username" placeholder="Bellisario" type="text" />
+    <input id="the-markdown" type="button" value="Get Markdown" />
+    <br />
+    <br />
+    <input id="the-repo" type="button" value="Source Code" />
+    <iframe
+      id="sponsor"
+      loading="lazy"
+      src="https://github.com/sponsors/Bellisario/button"
+      title="Sponsor Me"
+      height="35"
+      width="116"
+      style="border: 0; opacity: 0; transition: opacity 1s ease-in"
+      onload="this.style.opacity = 1;"
+    ></iframe>
+    <footer>
+      GitHub Profilator by
+      <a href="https://github.com/Bellisario">Giorgio Bellisario</a>, released
+      under the
+      <a href="https://github.com/Bellisario/profilator/blob/main/LICENSE"
+        >MIT License</a
+      >.
+    </footer>
+  </body>
+</html>

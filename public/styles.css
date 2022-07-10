@@ -1,0 +1,108 @@
+html {
+    background-color: #0d1117;
+    color: #f5f4f4;
+    font-family: sans-serif;
+    color-scheme: dark;
+}
+
+body {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+h2,
+h3 {
+    font-weight: unset;
+    margin-top: -2vh;
+}
+
+#sponsor {
+    border: 0;
+    /* use invert to "set" iframe dark mode like */
+    filter: invert(80%);
+    border-radius: 6px;
+}
+
+#version {
+    font-size: small;
+    vertical-align: top;
+    margin: 0.25vw;
+    font-style: italic;
+    color: #ff0000;
+}
+
+#the-result {
+    transition: opacity 0.5s ease-in-out;
+    width: 150px;
+    height: 200px;
+    opacity: 0;
+}
+
+#the-username,
+#the-markdown,
+#the-repo {
+    all: unset;
+    font-size: revert;
+    color: #b6b3b0;
+    background-color: #363535;
+    padding: 1vh !important;
+    border: 1px #4a4949 solid;
+    border-radius: 6px;
+    margin: 0.5vh;
+    margin-top: 2.5vh;
+    height: 3.5vh;
+    text-align: revert;
+    transition: all 0.3s ease-in-out;
+}
+
+#the-username:focus,
+#the-markdown:focus,
+#the-repo:focus {
+    box-shadow: inset 0px 0px 0px 2px #646262;
+}
+
+#the-result:focus {
+    all: unset;
+    box-shadow: inset 0px 0px 0px 2px #646262;
+}
+
+#the-markdown,
+#the-repo {
+    width: 7.5vw;
+    cursor: pointer;
+}
+
+/* mobile only */
+@media only screen and (max-width: 600px) {
+
+    #the-markdown,
+    #the-repo {
+        width: 27.5vw;
+    }
+}
+
+#the-repo {
+    margin-top: 0;
+    vertical-align: top;
+}
+
+#the-markdown:hover,
+#the-repo:hover {
+    background-color: #3a3a38;
+    transition-duration: .1s;
+}
+
+#profilator-container {
+    width: 150px;
+    height: 200px;
+    display: inline-block;
+    background-image: url('/@blank');
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 2.5vh;
+    font-size: small;
+}

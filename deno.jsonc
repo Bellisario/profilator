@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "strict": true
+    },
+    "lint": {
+        "rules": {
+            "tags": [
+                "recommended"
+            ]
+        }
+    },
+    "fmt": {
+        "options": {
+            "useTabs": false,
+            "lineWidth": 80,
+            "indentWidth": 4,
+            "singleQuote": true,
+            "proseWrap": "preserve"
+        }
+    },
+    "tasks": {
+        "start": "deno run --allow-net --allow-read --allow-env index.ts",
+        "dev": "deno run --allow-net --allow-read --allow-env --watch index.ts",
+        "test": "deno task test:lint",
+        "test:lint": "deno fmt --check",
+        "lint:fix": "deno fmt && deno lint"
+    }
+}
