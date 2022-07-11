@@ -1,4 +1,4 @@
-import { app, router } from './deps.ts';
+import { app, router, VERSION } from './deps.ts';
 import {
     acceptsHTML,
     defaultProfiles,
@@ -7,6 +7,7 @@ import {
     isGitHubCamoBot,
     oneDaySeconds,
     Profile,
+    DEV,
 } from './utils.ts';
 
 // Static files under the "public" folder
@@ -52,9 +53,21 @@ router.get('/@blank', (ctx) => {
     ctx.response.type = 'image/svg+xml';
     ctx.response.body = defaultProfiles['@blank'];
 });
+// get App Version
+router.get('/@version', (ctx) => {
+    ctx.response.type = 'text/javascript';
+    ctx.response.body = `window.VERSION = '${DEV ? 'DEV' : VERSION}';`;
+});
 
 router.get('/:username', async (ctx, next) => {
     const { username } = ctx.params;
+    const v = ctx.request.url.searchParams.get('v');
+    if (DEV === true && v === null)
+        return ctx.response.redirect(`/${username}?v=${Date.now()}`);
+
+    if (v === null)
+        return ctx.response.redirect(`/${username}?v=${VERSION}`);
+
     const { name, err } = await getUserName(username);
 
     if (err) {
@@ -65,7 +78,7 @@ router.get('/:username', async (ctx, next) => {
         `https://github.com/${username}.png?size=101`,
     );
 
-    const profile = await Profile({ username, name, image });
+    const profile = Profile({ username, name, image });
     ctx.response.type = 'image/svg+xml';
     ctx.response.body = profile;
 });

@@ -1,4 +1,9 @@
-import { Context, decoder, hbs, encode, ky } from './deps.ts';
+import { Context, decoder, encode, ky } from './deps.ts';
+
+export const DEV = Deno.env.get('DEV') === 'true';
+if (DEV === true) {
+    console.log('DEV mode enabled');
+}
 
 type Base64 = string;
 interface ProfileData {
@@ -25,7 +30,7 @@ interface GitHubAPI {
     received_events_url: string;
     type: string;
     site_admin: boolean;
-    name: string;
+    name: string | null;
     company?: string | null;
     blog: string;
     location: string;
@@ -39,6 +44,22 @@ interface GitHubAPI {
     following: number;
     created_at: Date;
     updated_at: Date;
+}
+
+/**
+ * Replaces the given text {{token}} with the given value.
+ */
+export class Replacer {
+    #text
+    constructor(text: string) {
+        this.#text = text;
+    }
+    replace(search: string, replace: string) {
+        this.#text = this.#text.replaceAll(`{{${search}}}`, replace);
+    }
+    get result() {
+        return this.#text;
+    }
 }
 
 function getDEVGitHubToken() {
@@ -70,7 +91,7 @@ export async function getUserName(
         ).json();
         return {
             err: false,
-            name: res.name,
+            name: res.name || '',
         };
     } catch {
         return {
@@ -80,11 +101,18 @@ export async function getUserName(
     }
 }
 
+const template = decoder.decode(await Deno.readFile('./assets/template.svg.hbs'));
+// const replacer = new Replacer(template);
 /**
  * Return a new profile SVG (as a string) with the given params.
  */
-export async function Profile(params: ProfileData) {
-    return await hbs.render('./assets/template.svg.hbs', { ...params });
+export function Profile(params: ProfileData) {
+    const replacer = new Replacer(template);
+    Object.keys(params).forEach((key: string) => {
+        //@ts-ignore: Cannot params[key] with key of type string
+        replacer.replace(key, params[key]);
+    })
+    return replacer.result;
 }
 
 /**
@@ -99,7 +127,7 @@ export async function getImageBase64(url: string): Promise<Base64> {
  * Return a Base64 string of the given image path.
  */
 export async function getLocalImageBase64(url: string): Promise<Base64> {
-    const res = await (await Deno.readFile(url)).buffer;
+    const res = (await Deno.readFile(url)).buffer;
     return encode(res);
 }
 
@@ -135,9 +163,9 @@ const internalProfilatorsData: { [key: string]: ProfileData } = {
  * Default profile profilators for internal use
  */
 export const defaultProfiles = {
-    '@profilator': await Profile(internalProfilatorsData['@profilator']),
-    '@blank': await Profile(internalProfilatorsData['@blank']),
-    '404': await Profile(internalProfilatorsData['404']),
+    '@profilator': Profile(internalProfilatorsData['@profilator']),
+    '@blank': Profile(internalProfilatorsData['@blank']),
+    '404': Profile(internalProfilatorsData['404']),
 };
 
 /**

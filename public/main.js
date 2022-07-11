@@ -19,8 +19,13 @@ function copyToClipboard(text) {
     document.body.removeChild(textarea);
 }
 
+function getImage(username) {
+    const ver = window.VERSION === 'DEV' ? Date.now() : window.VERSION;
+    return `${location.protocol}//${location.host}/${username}?v=${ver}`;
+}
+
 function getMarkdown(username) {
-    return `[![${username}'s Profilator](${location.protocol}//${location.host}/${username})](https://github.com/${username})`;
+    return `[![${username}'s Profilator](${getImage(username)})](https://github.com/${username})`;
 }
 
 function getLink(username) {
@@ -51,14 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
             toBeCopied = getMarkdown('Bellisario');
             resultLink.href = getLink('Bellisario');
             setTimeout(() => {
-                result.src = '/Bellisario';
+                result.src = getImage('Bellisario');
             }, 150);
             return;
         }
 
         toBeCopied = getMarkdown(username.value);
         keystrokeTimeout = setTimeout(() => {
-            result.src = '/' + username.value;
+            result.src = getImage(username.value);
             resultLink.href = getLink(username.value);
         }, 500);
     });
