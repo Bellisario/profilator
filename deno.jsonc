@@ -16,7 +16,7 @@
             "lineWidth": 80,
             "indentWidth": 4,
             "singleQuote": true,
-            "proseWrap": "preserve"
+            "proseWrap": "never"
         }
     },
     "tasks": {
