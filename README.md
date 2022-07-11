@@ -1,4 +1,4 @@
-<center><img src="https://profilator.deno.dev/@profilator?v=1.0.0.alpha.1" align="center"></img></center>
+<p align="center"><img src="https://profilator.deno.dev/@profilator?v=1.0.0.alpha.1" align="center"></img></center>
 <p></p>
 <h1 align="center">GitHub Profilator</h1>
 
