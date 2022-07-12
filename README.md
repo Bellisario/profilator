@@ -25,6 +25,7 @@ Under the hood, GitHub Profilator uses the GitHub API to fetch the profile data 
 ## Technologies
 
 I decided to use [Deno](https://deno.land) for this project because it's a great tool for building simple and fast servers, with the help of the awesome [Deno Deploy](https://deno.com/deploy).
+
 The template is built with Figma (and then manually modified) and you can find the .fig file [here](https://github.com/Bellisario/profilator/blob/main/assets/GitHub%20Profilator.fig).
 
 # Why should you use GitHub Profilator?
