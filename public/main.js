@@ -25,7 +25,9 @@ function getImage(username) {
 }
 
 function getMarkdown(username) {
-    return `[![${username}'s Profilator](${getImage(username)})](https://github.com/${username})`;
+    return `[![${username}'s Profilator](${
+        getImage(username)
+    })](https://github.com/${username})`;
 }
 
 function getLink(username) {

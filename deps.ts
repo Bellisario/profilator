@@ -12,9 +12,7 @@ const app = new Application({
 const router = new Router();
 const decoder = new TextDecoder('utf-8');
 
-
 // App Version
 const VERSION = '1.0.0.alpha.1';
-
 
 export { app, Context, decoder, encode, ky, router, VERSION };

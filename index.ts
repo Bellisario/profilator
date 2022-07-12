@@ -2,12 +2,12 @@ import { app, router, VERSION } from './deps.ts';
 import {
     acceptsHTML,
     defaultProfiles,
+    DEV,
     getImageBase64,
     getUserName,
     isGitHubCamoBot,
     oneDaySeconds,
     Profile,
-    DEV,
 } from './utils.ts';
 
 // Static files under the "public" folder
@@ -62,11 +62,13 @@ router.get('/@version', (ctx) => {
 router.get('/:username', async (ctx, next) => {
     const { username } = ctx.params;
     const v = ctx.request.url.searchParams.get('v');
-    if (DEV === true && v === null)
+    if (DEV === true && v === null) {
         return ctx.response.redirect(`/${username}?v=${Date.now()}`);
+    }
 
-    if (v === null)
+    if (v === null) {
         return ctx.response.redirect(`/${username}?v=${VERSION}`);
+    }
 
     const { name, err } = await getUserName(username);
 

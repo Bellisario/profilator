@@ -30,7 +30,7 @@ The template is built with Figma (and then manually modified) and you can find t
 
 # Why should you use GitHub Profilator?
 
-There is a simple answer to this question: like the description said "you can add GitHub profiles to Markdown in a snap" and I can also add you are able also to get a beautiful profile display for your GitHub profile, and not an "ugly" one like below  (you can see on a lot of repositories):
+There is a simple answer to this question: like the description said "you can add GitHub profiles to Markdown in a snap" and I can also add you are able also to get a beautiful profile display for your GitHub profile, and not an "ugly" one like below (you can see on a lot of repositories):
 
 | [![Giorgio Bellisario](https://github.com/Bellisario.png?size=100)](https://github.com/Bellisario) |
 | -------------------------------------------------------------------------------------------------- |

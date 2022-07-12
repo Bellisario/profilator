@@ -50,7 +50,7 @@ interface GitHubAPI {
  * Replaces the given text {{token}} with the given value.
  */
 export class Replacer {
-    #text
+    #text;
     constructor(text: string) {
         this.#text = text;
     }
@@ -111,7 +111,7 @@ export function Profile(params: ProfileData) {
     Object.keys(params).forEach((key: string) => {
         //@ts-ignore: Cannot params[key] with key of type string
         replacer.replace(key, params[key]);
-    })
+    });
     return replacer.result;
 }
 
