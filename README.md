@@ -8,6 +8,8 @@
 
 **Official website:** [https://profilator.deno.dev/](https://profilator.deno.dev/)
 
+> Are you using GitHub Profilator? Let us know [on this discussion](https://github.com/Bellisario/profilator/discussions/1)! :rocket:
+
 ## Example
 
 <!-- deno-fmt-ignore-start -->
