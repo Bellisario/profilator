@@ -20,15 +20,16 @@
 
 ## How it works
 
-Under the hood, GitHub Profilator uses the GitHub API to fetch the profile data and then uses a pre-built template to generate the image, with the all the data needed.
+Under the hood, GitHub Profilator uses the GitHub API to fetch the profile data and then uses a [pre-built template](https://github.com/Bellisario/profilator/blob/main/assets/template.svg) to generate the image, with the all the data needed.
 
 ## Technologies
 
-I decided to use Deno for this project because it is a great tool for building simple and fast servers, with the help of the awesome Deno Deploy.
+I decided to use [Deno](https://deno.land) for this project because it's a great tool for building simple and fast servers, with the help of the awesome [Deno Deploy](https://deno.com/deploy).
+The template is built with Figma (and then manually modified) and you can find the .fig file [here](https://github.com/Bellisario/profilator/blob/main/assets/GitHub%20Profilator.fig).
 
 # Why should you use GitHub Profilator?
 
-There is a simple answer to this question: like the description said "you can add GitHub profiles to Markdown in a snap" and I can also add you are able also to get a beautiful profile display for your GitHub profile, and not an "ugly" one like this and you can see on a lot of repositories:
+There is a simple answer to this question: like the description said "you can add GitHub profiles to Markdown in a snap" and I can also add you are able also to get a beautiful profile display for your GitHub profile, and not an "ugly" one like below  (you can see on a lot of repositories):
 
 | [![Giorgio Bellisario](https://github.com/Bellisario.png?size=100)](https://github.com/Bellisario) |
 | -------------------------------------------------------------------------------------------------- |
@@ -68,14 +69,14 @@ Then, you can set the token into a file named `.github_token` in the root of the
 echo <token> > .github_token
 ```
 
-If you prefer, you can also create a new environment variable called `GITHUB_TOKEN` and set it to the token, but this is not recommended for development use: it's only recommended if you want to use the server in production mode (for example) on Deno Deploy.
+If you prefer, you can also create a new environment variable called `GITHUB_TOKEN` and set it to the token, but this is not recommended for development use: it's only recommended if you want to use the server in production mode (for example) on [Deno Deploy](https://deno.com/deploy).
 
 ## How to contribute
 
-Feel free to open an issue or a pull request but just follow these guidelines:
+Feel free to [open an issue](https://github.com/Bellisario/profilator/issues/new/choose) or a [pull request](https://github.com/Bellisario/profilator/pulls) but follow these guidelines:
 
-- An issue is for a bug or a feature request, if you have any question or something similar, please use Discussions.
+- An issue is for a bug or a feature request, if you have any question or something similar, please use [Discussions](https://github.com/Bellisario/profilator/discussions).
 - Before opening an issue of a pull request, please check if the issue or the pull request already exists.
 - Before opening a pull request, make sure to run `deno fmt` and `deno lint` on the whole project to keep code style and linting rules.
 - Pull requests for packages updates are not allowed since there is Udd that checks them automatically.
-- If you don't know how to contribute, also because you don't know TypeScript, JavaScript, or Deno, you can always help others on Discussions, debug the application, share your awesome idea with a new issue (feature request) and check the whole project for misspellings, too.
+- If you don't know how to contribute, also because you don't know TypeScript, JavaScript, or Deno, you can always help others on [Discussions](https://github.com/Bellisario/profilator/discussions), debug the application, share your awesome ideas with a new issue (feature request) and check the whole project for misspellings, too.
