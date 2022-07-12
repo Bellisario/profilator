@@ -28,7 +28,7 @@ I decided to use [Deno](https://deno.land) for this project because it's a great
 
 The template is built with Figma (and then manually modified) and you can find the .fig file [here](https://github.com/Bellisario/profilator/blob/main/assets/GitHub%20Profilator.fig).
 
-# Why should you use GitHub Profilator?
+## Why should you use GitHub Profilator?
 
 There is a simple answer to this question: like the description said "you can add GitHub profiles to Markdown in a snap" and I can also add you are able also to get a beautiful profile display for your GitHub profile, and not an "ugly" one like below (you can see on a lot of repositories):
 
@@ -36,7 +36,7 @@ There is a simple answer to this question: like the description said "you can ad
 | -------------------------------------------------------------------------------------------------- |
 | [Giorgio Bellisario](https://github.com/Bellisario)                                                |
 
-# Development
+## Development
 
 To get started, clone the repo:
 
