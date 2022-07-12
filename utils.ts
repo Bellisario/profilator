@@ -101,7 +101,7 @@ export async function getUserName(
     }
 }
 
-const template = decoder.decode(await Deno.readFile('./assets/template.svg.hbs'));
+const template = decoder.decode(await Deno.readFile('./assets/template.svg'));
 // const replacer = new Replacer(template);
 /**
  * Return a new profile SVG (as a string) with the given params.
