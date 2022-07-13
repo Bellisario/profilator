@@ -76,4 +76,4 @@ If you prefer, you can also create a new environment variable called `GITHUB_TOK
 
 ## How to contribute
 
-Feel free to [open an issue](https://github.com/Bellisario/profilator/issues/new/choose) or a [pull request](https://github.com/Bellisario/profilator/pulls) but follow [Contributing Guidelines](https://github.com/Bellisario/profilator/blob/main/README.md).
+Feel free to [open an issue](https://github.com/Bellisario/profilator/issues/new/choose) or a [pull request](https://github.com/Bellisario/profilator/pulls) but follow [Contributing Guidelines](https://github.com/Bellisario/profilator/blob/main/CONTRIBUTING.md).
