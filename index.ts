@@ -62,6 +62,9 @@ router.get('/@version', (ctx) => {
 router.get('/:username', async (ctx, next) => {
     const { username } = ctx.params;
     const v = ctx.request.url.searchParams.get('v');
+    const scaleRaw = ctx.request.url.searchParams.get('scale');
+    const scale = new Number(scaleRaw) ? +scaleRaw! : 1;
+
     if (DEV === true && v === null) {
         return ctx.response.redirect(`/${username}?v=${Date.now()}`);
     }
@@ -80,7 +83,7 @@ router.get('/:username', async (ctx, next) => {
         `https://github.com/${username}.png?size=101`,
     );
 
-    const profile = Profile({ username, name, image });
+    const profile = Profile({ username, name, image, scale });
     ctx.response.type = 'image/svg+xml';
     ctx.response.body = profile;
 });

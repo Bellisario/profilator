@@ -10,6 +10,7 @@ interface ProfileData {
     username: string;
     name: string;
     image: Base64;
+    scale?: number;
 }
 interface GitHubAPI {
     login: string;
@@ -108,10 +109,19 @@ const template = decoder.decode(await Deno.readFile('./assets/template.svg'));
  */
 export function Profile(params: ProfileData) {
     const replacer = new Replacer(template);
+    const defaultHeight = 200;
+    const defaultWidth = 150;
+
+    const height = defaultHeight * (params.scale || 1);
+    const width = defaultWidth * (params.scale || 1);
+    delete params.scale
+
     Object.keys(params).forEach((key: string) => {
         //@ts-ignore: Cannot params[key] with key of type string
         replacer.replace(key, params[key]);
     });
+    replacer.replace('height', height.toString());
+    replacer.replace('width', width.toString());
     return replacer.result;
 }
 
