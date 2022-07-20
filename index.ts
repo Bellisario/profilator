@@ -63,7 +63,8 @@ router.get('/:username', async (ctx, next) => {
     const { username } = ctx.params;
     const v = ctx.request.url.searchParams.get('v');
     const scaleRaw = ctx.request.url.searchParams.get('scale');
-    const scale = new Number(scaleRaw) ? +scaleRaw! : 1;
+    // check if is NaN because 0 is a valid scale and will be set to the min scale, not to 1
+    const scale = Number.isNaN(new Number(scaleRaw)) ? +scaleRaw! : 1;
 
     if (DEV === true && v === null) {
         return ctx.response.redirect(`/${username}?v=${Date.now()}`);

@@ -111,9 +111,18 @@ export function Profile(params: ProfileData) {
     const replacer = new Replacer(template);
     const defaultHeight = 200;
     const defaultWidth = 150;
+    let scale
 
-    const height = defaultHeight * (params.scale || 1);
-    const width = defaultWidth * (params.scale || 1);
+    if (typeof params.scale !== 'number') {
+        // if scale is not provided (or invalid), use default
+        scale = 1;
+    } else {
+        // prevent scale to be below 0.5
+        scale = params.scale < 0.5 ? 0.5 : params.scale;
+    }
+
+    const height = defaultHeight * scale;
+    const width = defaultWidth * scale;
     delete params.scale
 
     Object.keys(params).forEach((key: string) => {
