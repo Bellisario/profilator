@@ -111,7 +111,7 @@ export function Profile(params: ProfileData) {
     const replacer = new Replacer(template);
     const defaultHeight = 200;
     const defaultWidth = 150;
-    let scale
+    let scale;
 
     if (typeof params.scale !== 'number') {
         // if scale is not provided (or invalid), use default
@@ -123,7 +123,7 @@ export function Profile(params: ProfileData) {
 
     const height = defaultHeight * scale;
     const width = defaultWidth * scale;
-    delete params.scale
+    delete params.scale;
 
     Object.keys(params).forEach((key: string) => {
         //@ts-ignore: Cannot params[key] with key of type string
