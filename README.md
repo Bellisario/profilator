@@ -16,9 +16,25 @@
 
 | Profile | Smooth Error |
 | ---- | ---- |
-| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.0)](https://github.com/Bellisario) | [![@404's Profilator](https://profilator.deno.dev/@404?v=1.0.0.alpha.0)](https://github.com/@404) |
+| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2)](https://github.com/Bellisario) | [![@404's Profilator](https://profilator.deno.dev/@404?v=1.0.0.alpha.2)](https://github.com/@404) |
+
+You can also customize the scale of the Profilator (there are no step scaling limits, _ex. you can also scale 0.93534...x_)
+| 1x scale | 0.75x scale | 0.5x scale |
+| ---- | ---- | ---- |
+| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2&scale=0.75)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2&scale=0.5)](https://github.com/Bellisario) 
+
+> **Warning:** Currently scale cannot be below 0.5x (because Profilator will become invisible :ghost:)
 
 <!-- deno-fmt-ignore-end -->
+
+### How to use the scale option
+
+Generate a new Profilator from [Profilator website](https://profilator.deno.dev/) and then when adding to markdown change it like this:
+```diff
++ [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2&scale=0.75)](https://github.com/Bellisario)
+- [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2)](https://github.com/Bellisario)
+```
+> **Tip:** you can also scale more than 1x, for example 2x, but for now the image resolution is the same, so could be grainy
 
 ## How it works
 
