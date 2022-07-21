@@ -62,6 +62,11 @@ router.get('/@version', (ctx) => {
 router.get('/:username', async (ctx, next) => {
     const { username } = ctx.params;
     const v = ctx.request.url.searchParams.get('v');
+    // Number(null) (when param not set) returns 0 , so set falsy values to '1'
+    const scaleRaw = ctx.request.url.searchParams.get('scale') || '1';
+    // check if is NaN because 0 is a valid scale and will be set to the min scale, not to 1
+    const scale = !Number.isNaN(Number(scaleRaw)) ? Number(scaleRaw) : 1;
+
     if (DEV === true && v === null) {
         return ctx.response.redirect(`/${username}?v=${Date.now()}`);
     }
@@ -80,7 +85,7 @@ router.get('/:username', async (ctx, next) => {
         `https://github.com/${username}.png?size=101`,
     );
 
-    const profile = Profile({ username, name, image });
+    const profile = Profile({ username, name, image, scale });
     ctx.response.type = 'image/svg+xml';
     ctx.response.body = profile;
 });
