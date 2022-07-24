@@ -30,10 +30,12 @@ You can also customize the scale of the Profilator (there are no step scaling li
 ### How to use the scale option
 
 Generate a new Profilator from [Profilator website](https://profilator.deno.dev/) and then when adding to markdown change it like this:
+
 ```diff
 + [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2&scale=0.75)](https://github.com/Bellisario)
 - [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.2)](https://github.com/Bellisario)
 ```
+
 > **Tip:** you can also scale more than 1x, for example 2x, but for now the image resolution is the same, so could be grainy
 
 ## How it works

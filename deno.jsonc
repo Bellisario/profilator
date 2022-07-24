@@ -17,6 +17,11 @@
             "indentWidth": 4,
             "singleQuote": true,
             "proseWrap": "never"
+        },
+        "files": {
+            "exclude": [
+                ".github/"
+            ]
         }
     },
     "tasks": {

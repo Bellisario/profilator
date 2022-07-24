@@ -72,6 +72,10 @@ h3 {
     cursor: pointer;
 }
 
+#the-repo-link {
+    all: unset;
+}
+
 /* mobile only */
 @media only screen and (max-width: 600px) {
 
