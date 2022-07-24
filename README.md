@@ -1,3 +1,5 @@
+<!-- cspell:word jamesbond -->
+
 <p align="center"><img src="https://profilator.deno.dev/@profilator?v=1.0.0.alpha.1" align="center"></img></center>
 <p></p>
 <h1 align="center">GitHub Profilator</h1>
@@ -37,6 +39,21 @@ Generate a new Profilator from [Profilator website](https://profilator.deno.dev/
 ```
 
 > **Tip:** you can also scale more than 1x, for example 2x, but for now the image resolution is the same, so could be grainy
+
+### Other tips
+
+#### Force username letter uppercase
+
+If you want to force an username letter to be uppercase, just write the username with the letter in uppercase, Profilator will be able to parse it anyway and you'll see that in uppercase, too.\
+See the example below:
+
+<!-- deno-fmt-ignore-start -->
+
+| lowercase | forced uppercase |
+| ---- | ---- |
+| [![jamesbond's Profilator](https://profilator.deno.dev/jamesbond?v=1.0.0.alpha.2)](https://github.com/jamesbond) | [![JamesBond's Profilator](https://profilator.deno.dev/JamesBond?v=1.0.0.alpha.2)](https://github.com/JamesBond) |
+
+<!-- deno-fmt-ignore-end -->
 
 ## How it works
 
