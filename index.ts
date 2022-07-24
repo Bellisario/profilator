@@ -1,3 +1,5 @@
+// cspell:word maxage
+
 import { app, router, VERSION } from './deps.ts';
 import {
     acceptsHTML,
@@ -29,7 +31,7 @@ app.use(async (ctx, next) => {
 app.use(async (ctx, next) => {
     ctx.response.headers.set(
         'cache-control',
-        'public, max-age=' + oneDaySeconds,
+        's-maxage=' + oneDaySeconds,
     );
     await next();
 });
