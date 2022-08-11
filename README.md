@@ -6,7 +6,8 @@
 
 > Add GitHub profiles to Markdown in a snap
 
-**Warning:** This is an _Alpha_ version of the project, and it is not stable yet.
+> **Warning**\
+> This is an _Alpha_ version of the project, and it is not stable yet.
 
 **Official website:** [https://profilator.deno.dev/](https://profilator.deno.dev/)
 
