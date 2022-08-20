@@ -41,6 +41,8 @@ Generate a new Profilator from [Profilator website](https://profilator.deno.dev/
 
 > **Tip:** you can also scale more than 1x, for example 2x, but for now the image resolution is the same, so could be grainy
 
+> **Warning:** Profile images over 3x will be rendered as 3x to prevent server bandwidth consumption too high and client heavy image downloads.
+
 ### Other tips
 
 #### Force username letter uppercase
