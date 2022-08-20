@@ -10,6 +10,7 @@ import {
     isGitHubCamoBot,
     oneDaySeconds,
     Profile,
+    scaler,
 } from './utils.ts';
 
 // Static files under the "public" folder
@@ -65,9 +66,13 @@ router.get('/:username', async (ctx, next) => {
     const { username } = ctx.params;
     const v = ctx.request.url.searchParams.get('v');
     // Number(null) (when param not set) returns 0 , so set falsy values to '1'
-    const scaleRaw = ctx.request.url.searchParams.get('scale') || '1';
+    const scaleString = ctx.request.url.searchParams.get('scale') || '1';
     // check if is NaN because 0 is a valid scale and will be set to the min scale, not to 1
-    const scale = !Number.isNaN(Number(scaleRaw)) ? Number(scaleRaw) : 1;
+    const scaleRaw = !Number.isNaN(Number(scaleString))
+        ? Number(scaleString)
+        : 1;
+    // make a valid scale
+    const scale = scaler(scaleRaw);
 
     if (DEV === true && v === null) {
         return ctx.response.redirect(`/${username}?v=${Date.now()}`);
@@ -84,7 +89,10 @@ router.get('/:username', async (ctx, next) => {
     }
 
     const image = await getImageBase64(
-        `https://github.com/${username}.png?size=101`,
+        // prevent scale image of more than 3x (additional condition)
+        `https://github.com/${username}.png?size=${
+            101 * (scale > 3 ? 3 : scale)
+        }`,
     );
 
     const profile = Profile({ username, name, image, scale });

@@ -10,7 +10,7 @@ interface ProfileData {
     username: string;
     name: string;
     image: Base64;
-    scale?: number;
+    scale: number;
 }
 interface GitHubAPI {
     login: string;
@@ -103,7 +103,19 @@ export async function getUserName(
 }
 
 const template = decoder.decode(await Deno.readFile('./assets/template.svg'));
-// const replacer = new Replacer(template);
+
+/**
+ * Returns a valid scale from the given scale number.
+ */
+export function scaler(scale: number) {
+    if (typeof scale !== 'number') {
+        // if scale is not provided (or invalid), use default
+        return 1;
+    }
+    // prevent scale to be below 0.5
+    return scale < 0.5 ? 0.5 : scale;
+}
+
 /**
  * Return a new profile SVG (as a string) with the given params.
  */
@@ -111,18 +123,12 @@ export function Profile(params: ProfileData) {
     const replacer = new Replacer(template);
     const defaultHeight = 200;
     const defaultWidth = 150;
-    let scale;
-
-    if (typeof params.scale !== 'number') {
-        // if scale is not provided (or invalid), use default
-        scale = 1;
-    } else {
-        // prevent scale to be below 0.5
-        scale = params.scale < 0.5 ? 0.5 : params.scale;
-    }
+    const scale = params.scale;
 
     const height = defaultHeight * scale;
     const width = defaultWidth * scale;
+
+    // @ts-ignore: Delete scale to avoid unnecessary forEach loop
     delete params.scale;
 
     Object.keys(params).forEach((key: string) => {
@@ -165,16 +171,19 @@ const internalProfilatorsData: { [key: string]: ProfileData } = {
         username: 'Profilator',
         name: 'Snap GitHub profiles',
         image: await getLocalImageBase64(`${Deno.cwd()}/assets/profile.png`),
+        scale: 1,
     },
     '@blank': {
         username: '',
         name: '',
         image: blankGif,
+        scale: 1,
     },
     '404': {
         username: 'Not Found',
         name: 'GitHub user not found.',
         image: blankGif,
+        scale: 1,
     },
 };
 
