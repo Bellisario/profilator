@@ -10,7 +10,7 @@
 </g>
 <g id="info">
 <text x="50%" font-family="Verdana,DejaVu Sans,sans-serif" font-size="19" fill="white" y="148" text-anchor="middle">{{username}}</text>
-<text x="50%" font-family="Verdana,DejaVu Sans,sans-serif" font-size="12" fill="white" y="165" text-anchor="middle">{{name}}</text>
+<text x="50%" font-family="sans-serif" font-size="12" fill="white" y="165" text-anchor="middle">{{name}}</text>
 </g>
 <circle id="image_stroke" cx="75" cy="62" r="50.75" stroke="#30363D" stroke-width="1.5"/>
 <defs>
