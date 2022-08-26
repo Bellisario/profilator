@@ -1,6 +1,6 @@
 <!-- cspell:word jamesbond -->
 
-<p align="center"><img src="https://profilator.deno.dev/@profilator?v=1.0.0.alpha.3" align="center"></img></center>
+<p align="center"><img src="https://profilator.deno.dev/@profilator?v=1.0.0.alpha.4" align="center"></img></center>
 <p></p>
 <h1 align="center">GitHub Profilator</h1>
 
@@ -19,12 +19,12 @@
 
 | Profile | Smooth Error |
 | ---- | ---- |
-| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.3)](https://github.com/Bellisario) | [![@404's Profilator](https://profilator.deno.dev/@404?v=1.0.0.alpha.3)](https://github.com/@404) |
+| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4)](https://github.com/Bellisario) | [![@404's Profilator](https://profilator.deno.dev/@404?v=1.0.0.alpha.4)](https://github.com/@404) |
 
 You can also customize the scale of the Profilator (there are no step scaling limits, _ex. you can also scale 0.93534...x_)
 | 1x scale | 0.75x scale | 0.5x scale |
 | ---- | ---- | ---- |
-| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.3)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.3&scale=0.75)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.3&scale=0.5)](https://github.com/Bellisario) 
+| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4&scale=0.75)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4&scale=0.5)](https://github.com/Bellisario) 
 
 > **Warning:** Currently scale cannot be below 0.5x (because Profilator will become invisible :ghost:)
 
@@ -35,8 +35,8 @@ You can also customize the scale of the Profilator (there are no step scaling li
 Generate a new Profilator from [Profilator website](https://profilator.deno.dev/) and then when adding to markdown change it like this:
 
 ```diff
-+ [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.3&scale=0.75)](https://github.com/Bellisario)
-- [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.3)](https://github.com/Bellisario)
++ [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4&scale=0.75)](https://github.com/Bellisario)
+- [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4)](https://github.com/Bellisario)
 ```
 
 > **Tip:** you can also scale more than 1x, for example 2x, but for now the image resolution is the same, so could be grainy
@@ -54,7 +54,7 @@ See the example below:
 
 | lowercase | forced uppercase |
 | ---- | ---- |
-| [![jamesbond's Profilator](https://profilator.deno.dev/jamesbond?v=1.0.0.alpha.3)](https://github.com/jamesbond) | [![JamesBond's Profilator](https://profilator.deno.dev/JamesBond?v=1.0.0.alpha.3)](https://github.com/JamesBond) |
+| [![jamesbond's Profilator](https://profilator.deno.dev/jamesbond?v=1.0.0.alpha.4)](https://github.com/jamesbond) | [![JamesBond's Profilator](https://profilator.deno.dev/JamesBond?v=1.0.0.alpha.4)](https://github.com/JamesBond) |
 
 <!-- deno-fmt-ignore-end -->
 
