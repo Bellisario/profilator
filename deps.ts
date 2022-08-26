@@ -2,8 +2,8 @@ import {
     Application,
     Context,
     Router,
-} from 'https://deno.land/x/oak@v11.0.0/mod.ts';
-import { encode } from 'https://deno.land/std@0.152.0/encoding/base64.ts';
+} from 'https://deno.land/x/oak@v11.1.0/mod.ts';
+import { encode } from 'https://deno.land/std@0.153.0/encoding/base64.ts';
 import ky from 'https://cdn.skypack.dev/ky@0.31.0?dts';
 
 const app = new Application({
