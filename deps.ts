@@ -3,7 +3,7 @@ import {
     Context,
     Router,
 } from 'https://deno.land/x/oak@v12.6.1/mod.ts';
-import { encode } from 'https://deno.land/std@0.209.0/encoding/base64.ts';
+import { encodeBase64 } from 'https://deno.land/std@0.209.0/encoding/base64.ts';
 import ky from 'https://cdn.skypack.dev/ky@0.31.0?dts';
 
 const app = new Application({
@@ -15,4 +15,4 @@ const decoder = new TextDecoder('utf-8');
 // App Version
 const VERSION = '1.0.0.alpha.4';
 
-export { app, Context, decoder, encode, ky, router, VERSION };
+export { app, Context, decoder, encodeBase64 as encode, ky, router, VERSION };
