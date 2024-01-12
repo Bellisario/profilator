@@ -3,7 +3,7 @@ import {
     Context,
     Router,
 } from 'https://deno.land/x/oak@v12.6.2/mod.ts';
-import { encodeBase64 } from 'https://deno.land/std@0.211.0/encoding/base64.ts';
+import { encodeBase64 } from 'https://deno.land/std@0.212.0/encoding/base64.ts';
 import ky from 'https://cdn.skypack.dev/ky@0.31.0?dts';
 
 const app = new Application({
