@@ -1,0 +1,28 @@
+{
+    "name": "profilator",
+    "module": "src/index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "bun --config=.config/bunfig.toml --hot --watch .",
+        "start": "wrangler dev",
+        "deploy": "wrangler deploy",
+        "format": "prettier --config .config/.prettierrc --write ."
+    },
+    "imports": {
+        "#utils": "./src/utils.ts",
+        "#types/*": "./types/*"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20260501.1",
+        "@types/bun": "latest",
+        "prettier": "^3.8.3",
+        "wrangler": "^4.87.0"
+    },
+    "peerDependencies": {
+        "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "hono": "^4.12.16"
+    }
+}

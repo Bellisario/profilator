@@ -17,6 +17,6 @@
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_0_1" transform="translate(0 -0.01) scale(0.0025 0.00255)"/>
 </pattern>
-<image id="image0_0_1" data-name="{{username}}.png" width="400" height="400" xlink:href="data:image/png;base64,{{image}}"/>
+<image id="image0_0_1" data-name="{{username}}.png" width="400" height="400" xlink:href="{{image}}"/>
 </defs>
 </svg>
