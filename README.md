@@ -1,47 +1,38 @@
-<!-- cspell:word jamesbond -->
-
-<p align="center"><img src="https://profilator.deno.dev/@profilator?v=1.0.0.alpha.4" align="center"></img></center>
+<p align="center"><img src="https://profilator.bellisario.tk/api/v1/@profilator" align="center"></img></center>
 <p></p>
 <h1 align="center">GitHub Profilator</h1>
 
-> Add GitHub profiles to Markdown in a snap
+_Add GitHub profiles to Markdown in a snap_
 
-> **Warning**\
-> This is an _Alpha_ version of the project, and it is not stable yet.
-
-**Official website:** [https://profilator.deno.dev/](https://profilator.deno.dev/)
+**Official instance:** [profilator.bellisario.tk](https://profilator.bellisario.tk/)
 
 > Are you using GitHub Profilator? Let us know [on this discussion](https://github.com/Bellisario/profilator/discussions/1)! :rocket:
 
 ## Example
 
-<!-- deno-fmt-ignore-start -->
+| Profile                                                                                                         | Smooth Error                                                                                  |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [![Bellisario's Profilator](https://profilator.bellisario.tk/api/v1/Bellisario)](https://github.com/Bellisario) | [![@404's Profilator](https://profilator.bellisario.tk/api/v1/@404)](https://github.com/@404) |
 
-| Profile | Smooth Error |
-| ---- | ---- |
-| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4)](https://github.com/Bellisario) | [![@404's Profilator](https://profilator.deno.dev/@404?v=1.0.0.alpha.4)](https://github.com/@404) |
-
-You can also customize the scale of the Profilator (there are no step scaling limits, _ex. you can also scale 0.93534...x_)
+You can also customize the scale of the Profilator (there are no step scaling limits, _ex. you can also scale 0.67x_)
 | 1x scale | 0.75x scale | 0.5x scale |
 | ---- | ---- | ---- |
-| [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4&scale=0.75)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4&scale=0.5)](https://github.com/Bellisario) 
+| [![Bellisario's Profilator](https://profilator.bellisario.tk/api/v1/Bellisario)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.bellisario.tk/api/v1/Bellisario?scale=0.75)](https://github.com/Bellisario) | [![Bellisario's Profilator](https://profilator.bellisario.tk/api/v1/Bellisario?scale=0.5)](https://github.com/Bellisario)
 
-> **Warning:** Currently scale cannot be below 0.5x (because Profilator will become invisible :ghost:)
-
-<!-- deno-fmt-ignore-end -->
+> [!NOTE]
+> Scale is limited to 0.5x for visibility reasons.
 
 ### How to use the scale option
 
-Generate a new Profilator from [Profilator website](https://profilator.deno.dev/) and then when adding to markdown change it like this:
+Generate a new Profilator from [the official website](https://profilator.bellisario.tk/) and while updating the markdown change it like this:
 
 ```diff
-+ [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4&scale=0.75)](https://github.com/Bellisario)
-- [![Bellisario's Profilator](https://profilator.deno.dev/Bellisario?v=1.0.0.alpha.4)](https://github.com/Bellisario)
++ [![Bellisario's Profilator](https://profilator.bellisario.tk/api/v1/Bellisario?scale=0.75)](https://github.com/Bellisario)
+- [![Bellisario's Profilator](https://profilator.bellisario.tk/api/v1/Bellisario)](https://github.com/Bellisario)
 ```
 
-> **Tip:** you can also scale more than 1x, for example 2x, but for now the image resolution is the same, so could be grainy
-
-> **Warning:** Profile images over 3x will be rendered as 3x to prevent server bandwidth consumption too high and client heavy image downloads.
+> [!TIP]
+> You can scale up to 3x.
 
 ### Other tips
 
@@ -50,13 +41,9 @@ Generate a new Profilator from [Profilator website](https://profilator.deno.dev/
 If you want to force an username letter to be uppercase, just write the username with the letter in uppercase, Profilator will be able to parse it anyway and you'll see that in uppercase, too.\
 See the example below:
 
-<!-- deno-fmt-ignore-start -->
-
-| lowercase | forced uppercase |
-| ---- | ---- |
-| [![jamesbond's Profilator](https://profilator.deno.dev/jamesbond?v=1.0.0.alpha.4)](https://github.com/jamesbond) | [![JamesBond's Profilator](https://profilator.deno.dev/JamesBond?v=1.0.0.alpha.4)](https://github.com/JamesBond) |
-
-<!-- deno-fmt-ignore-end -->
+| lowercase                                                                                                    | forced uppercase                                                                                             |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| [![jamesbond's Profilator](https://profilator.bellisario.tk/api/v1/jamesbond)](https://github.com/jamesbond) | [![JamesBond's Profilator](https://profilator.bellisario.tk/api/v1/JamesBond)](https://github.com/JamesBond) |
 
 ## How it works
 
@@ -64,13 +51,13 @@ Under the hood, GitHub Profilator uses the GitHub API to fetch the profile data 
 
 ## Technologies
 
-I decided to use [Deno](https://deno.land) for this project because it's a great tool for building simple and fast servers, with the help of the awesome [Deno Deploy](https://deno.com/deploy).
+This project uses [Hono](https://hono.dev/) and [Bun](https://bun.sh/), with the option to deploy to [Cloudflare Workers](https://www.cloudflare.com/developer-platform/products/workers/) (used for the official instance).
 
-The template is built with Figma (and then manually modified) and you can find the .fig file [here](https://github.com/Bellisario/profilator/blob/main/assets/GitHub%20Profilator.fig).
+The template is built with Figma (and then manually modified). You can find the `.fig` file [here](https://github.com/Bellisario/profilator/blob/main/assets/GitHub%20Profilator.fig).
 
 ## Why should you use GitHub Profilator?
 
-There is a simple answer to this question: like the description said "you can add GitHub profiles to Markdown in a snap" and I can also add you are able also to get a beautiful profile display for your GitHub profile, and not an "ugly" one like below (you can see on a lot of repositories):
+Because, as the description said, "you can add GitHub profiles to Markdown in a snap" and in a prettier format than the plain "ugly" table you see on a lot of repositiories:
 
 | [![Giorgio Bellisario](https://github.com/Bellisario.png?size=100)](https://github.com/Bellisario) |
 | -------------------------------------------------------------------------------------------------- |
@@ -78,40 +65,38 @@ There is a simple answer to this question: like the description said "you can ad
 
 ## Development
 
-To get started, clone the repo:
+To get started, clone, `cd` the repo and init the `.env` file:
 
 ```bash
-git clone https://github.com/Bellisario/profilator.git
+git clone https://github.com/Bellisario/profilator && cd profilator
+```
+
+```bash
+cp .env.example .env
 ```
 
 Then, you can run the following command to start the server:
 
 ```bash
-deno task dev
+bun run dev
 ```
 
-You can also run the following command to start the server in production mode:
+You can also run this command to start the server in production-like mode with Cloudflare Wrangler:
 
 ```bash
-deno task start
+bun run start
 ```
 
----
+When you're done with the changes, run `bun run format` to make sure your changes follow the project formatting style.
 
-**Warning:** You could need to create a new GitHub personal access token to use this server (especially if your IP Address is associated from GitHub as "too many requests").
+> [!NOTE]
+> Depending on your Internet provider, you may need to [create a GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) and add it to your `.env` file to use GitHub API.
 
-### To use a personal access token
+## Contributing
 
-Create a new one from [here](https://github.com/settings/tokens/new?description=GitHub%20Profilator%20DEV) (it requires no permissions).
-
-Then, you can set the token into a file named `.github_token` in the root of the project. You can also use the terminal like this:
-
-```bash
-echo <token> > .github_token
-```
-
-If you prefer, you can also create a new environment variable called `GITHUB_TOKEN` and set it to the token, but this is not recommended for development use: it's only recommended if you want to use the server in production mode (for example) on [Deno Deploy](https://deno.com/deploy).
-
-## How to contribute
-
+We :heart: contributions!\
 Feel free to [open an issue](https://github.com/Bellisario/profilator/issues/new/choose) or a [pull request](https://github.com/Bellisario/profilator/pulls) but follow [Contributing Guidelines](https://github.com/Bellisario/profilator/blob/main/CONTRIBUTING.md).
+
+## License
+
+MIT License [here](https://github.com/Bellisario/profilator/blob/main/LICENSE).
