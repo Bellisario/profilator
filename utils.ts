@@ -185,6 +185,12 @@ const internalProfilatorsData: { [key: string]: ProfileData } = {
         image: blankGif,
         scale: 1,
     },
+    '@old-api': {
+        username: 'API expiring',
+        name: 'See Bellisario/profilator',
+        image: blankGif,
+        scale: 1,
+    }
 };
 
 /**
@@ -194,6 +200,7 @@ export const defaultProfiles = {
     '@profilator': Profile(internalProfilatorsData['@profilator']),
     '@blank': Profile(internalProfilatorsData['@blank']),
     '404': Profile(internalProfilatorsData['404']),
+    '@old-api': Profile(internalProfilatorsData['@old-api']),
 };
 
 /**

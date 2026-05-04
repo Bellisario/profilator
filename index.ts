@@ -63,6 +63,13 @@ router.get('/@version', (ctx) => {
 });
 
 router.get('/:username', async (ctx, next) => {
+    // respond with API deprecation message half the times
+    if (Math.random() > 0.5) {
+        ctx.response.type = 'image/svg+xml';
+        ctx.response.body = defaultProfiles['@old-api'];
+        return;
+    }
+
     const { username } = ctx.params;
     const v = ctx.request.url.searchParams.get('v');
     // Number(null) (when param not set) returns 0 , so set falsy values to '1'
