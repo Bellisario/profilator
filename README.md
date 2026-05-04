@@ -2,6 +2,10 @@
 <p></p>
 <h1 align="center">GitHub Profilator</h1>
 
+> [!WARNING]
+> The old Deno API has been deprecated and will stop working soon (see [Deno Deploy Classic shutdown](https://docs.deno.com/deploy/classic/)).\
+> Please update to the new API endpoint as soon as possible.
+
 _Add GitHub profiles to Markdown in a snap_
 
 **Official instance:** [profilator.bellisario.tk](https://profilator.bellisario.tk/)
