@@ -63,8 +63,8 @@ router.get('/@version', (ctx) => {
 });
 
 router.get('/:username', async (ctx, next) => {
-    // respond with API deprecation message half the times
-    if (Math.random() > 0.5) {
+    // respond with API deprecation message on 75% of requests
+    if (Math.random() < 0.75) {
         ctx.response.type = 'image/svg+xml';
         ctx.response.body = defaultProfiles['@old-api'];
         return;
