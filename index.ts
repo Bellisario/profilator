@@ -63,12 +63,16 @@ router.get('/@version', (ctx) => {
 });
 
 router.get('/:username', async (ctx, next) => {
-    // respond with API deprecation message to all requests
-    if (true) {
+    // API deprecation alerts
+    if (Math.random() < 0.25) {
+        ctx.response.status = 404;
+        ctx.response.type = 'text/plain';
+        ctx.response.body = 'Not found.\n\nPlease update API endpoint.\nSee https://github.com/Bellisario/profilator for more.'
+    } else {
         ctx.response.type = 'image/svg+xml';
         ctx.response.body = defaultProfiles['@old-api'];
-        return;
     }
+    return;
 
     const { username } = ctx.params;
     const v = ctx.request.url.searchParams.get('v');
