@@ -64,13 +64,10 @@ router.get('/@version', (ctx) => {
 
 router.get('/:username', async (ctx, next) => {
     // API deprecation alerts
-    if (Math.random() < 0.25) {
+    if (true) {
         ctx.response.status = 404;
         ctx.response.type = 'text/plain';
         ctx.response.body = 'Not found.\n\nPlease update API endpoint.\nSee https://github.com/Bellisario/profilator for more.'
-    } else {
-        ctx.response.type = 'image/svg+xml';
-        ctx.response.body = defaultProfiles['@old-api'];
     }
     return;
 
